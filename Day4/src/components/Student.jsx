@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Student({ name, live }) {
+function Student(props) {
+  let live = props.live;
+  const [name, setName] = useState(props.name);
+
   return (
     <ul>
       <li>
@@ -9,6 +12,7 @@ function Student({ name, live }) {
       <li>
         live: <i>{live}</i>
       </li>
+      <button onClick={() => setName("Name updated")}>Change Name</button>
     </ul>
   );
 }
