@@ -1,0 +1,24 @@
+ul {
+  width: 50%;
+  margin: auto;
+
+  background-color: aliceblue;
+  list-style-type: none;
+
+  margin-bottom: 2em;
+  padding: 1em;
+}
+
+ul:last-child {
+  margin-bottom: 0;
+}
+
+ul > li {
+  font-size: large;
+  margin-bottom: 0.4em;
+  color: brown;
+}
+
+ul > li > i {
+  color: gray;
+}
