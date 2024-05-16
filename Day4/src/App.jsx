@@ -1,9 +1,9 @@
 import Background from "./components/Background";
 import Student from "./components/Student";
+import Form from "./components/Form";
 import "./styles/main.css";
 
 function App() {
-  const name = "Code Hub";
   const studnets = [
     {
       name: "arkar",
@@ -26,6 +26,7 @@ function App() {
           <Student {...student} key={student.name} />
         ))}
       </Background>
+      <Form />
     </div>
   );
 }
