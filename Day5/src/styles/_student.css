@@ -1,0 +1,49 @@
+section {
+  display: flex;
+
+  width: 90%;
+  margin: auto;
+
+  background-color: aliceblue;
+  list-style-type: none;
+
+  margin-bottom: 2em;
+  padding: 1em;
+}
+
+section:last-child {
+  margin-bottom: 0;
+}
+
+.student-data__container {
+  display: flex;
+  align-items: center;
+
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 1.4rem;
+}
+
+.student-labels {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: brown;
+  margin-right: 1em;
+}
+
+.student-data {
+  color: gray;
+}
+
+.student-avatar {
+  width: 20%;
+  height: 150px;
+  margin-right: 2em;
+  cursor: pointer;
+}
+
+.student-avatar > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
