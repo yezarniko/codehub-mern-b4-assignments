@@ -1,0 +1,78 @@
+@mixin d-flex($dir: row, $justify-content: center) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify-content;
+}
+
+@mixin btn(
+  $bg: $primary-color,
+  $color: white,
+  $font-size: 1rem,
+  $padding: 0.5em 1em
+) {
+  display: inline-block;
+  background-color: $bg;
+  color: $color;
+  font-size: $font-size;
+  font-weight: bold;
+  padding: $padding;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+@mixin width($width: 50%) {
+  width: $width;
+  margin-inline: auto;
+}
+
+// Define the breakpoints
+$breakpoints: (
+  "mobile": 480px,
+  "tablet": 1000px,
+  "desktop": 1200px,
+);
+
+@mixin respond-to($device) {
+  @if map-has-key($breakpoints, $device) {
+    $size: map-get($breakpoints, $device);
+    @media (width >= $size) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, #{$device} is not a defined breakpoint.";
+  }
+}
+
+@mixin heading() {
+  margin-block: 2em;
+  font-size: 1.2rem;
+
+  @include respond-to("desktop") {
+    font-size: 1.3rem;
+  }
+}
+
+@mixin scrollbar($track: 0) {
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  @if ($track == 1) {
+    &::-webkit-scrollbar-track {
+      border-radius: 8px;
+      background-color: #e7e7e7;
+      border: 1px solid #cacaca;
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: rgba(21, 122, 254, 0.2);
+  }
+}
