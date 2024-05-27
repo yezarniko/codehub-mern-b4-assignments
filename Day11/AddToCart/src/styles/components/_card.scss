@@ -1,0 +1,69 @@
+.product__card {
+  @include d-flex($justify-content: space-between);
+  @include width(80%);
+
+  @include respond-to("desktop") {
+    @include width(50%);
+  }
+  padding: 1.3em;
+  margin-bottom: 2em;
+
+  border: 2px solid rgba(21, 122, 254, 0.2);
+  border-radius: 0.5em;
+
+  main,
+  aside {
+    @include d-flex($dir: column, $justify-content: space-between);
+  }
+
+  main > div:not(:last-child) {
+    margin-bottom: 1em;
+  }
+
+  &__name {
+    font-weight: 600;
+  }
+
+  &__details {
+    font-style: italic;
+    font-size: 0.9em;
+    color: $secondary-color;
+  }
+
+  &__price {
+    color: $primary-color;
+  }
+
+  &__count {
+    p {
+      color: white;
+      border-radius: 0.5em;
+      padding-inline: 0.8em;
+      padding-block: 0.1em;
+      text-align: center;
+      background-color: $primary-color;
+    }
+
+    & > div > button {
+      @include btn($font-size: 0.8em, $padding: 0.4em 0.5em);
+      margin-left: 0.5em;
+    }
+
+    input {
+      @include width(70%);
+      color: $primary-color;
+      height: 40%;
+      text-align: center;
+
+      font-size: 0.8em;
+      font-weight: 600;
+
+      border: 2px solid $secondary-color;
+      border-radius: 10%;
+      outline: none;
+    }
+    button {
+      @include btn($font-size: 0.8em);
+    }
+  }
+}
