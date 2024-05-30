@@ -1,7 +1,5 @@
 import { createContext, useEffect, useState } from "react";
 
-const removeItemHandler = () => {};
-
 export const itemContext = createContext(null);
 
 function ItemContextProvider({ children }) {

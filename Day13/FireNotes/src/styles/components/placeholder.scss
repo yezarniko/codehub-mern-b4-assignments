@@ -1,0 +1,15 @@
+.placeholder {
+  margin: 1em;
+  text-align: center;
+  & > h2 {
+    color: $primary-color;
+    margin-block: 1em;
+  }
+  & > p {
+    color: $secondary-color;
+    font-size: 1rem;
+    span {
+      @include btn($font-size: 0.7rem);
+    }
+  }
+}
